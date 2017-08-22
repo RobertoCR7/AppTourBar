@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+<div class="panel-group">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="<%= informacion_path %>">Info</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul class="nav navbar-nav">
+            <li class="nav-item <%= 'active' if current_page?(uservestimenta_path) %>"><a href="<%= uservestimenta_path %>">Vestimenta</a></li>
+              <li class="nav-item <%= 'active' if current_page?(userpromociones_path) %>"><a href="<%= userpromociones_path %>">Promociones</a></li>
+              <li class="nav-item <%= 'active' if current_page?(usereventos_path) %>"><a href="<%= usereventos_path %>">Eventos</a></li>
+              <li class="nav-item <%= 'active' if current_page?(compras_path) %>"><a href="<%= compras_path %>">Compras</a></li>
+              <li class="nav-item <%= 'active' if current_page?(userofreces_path) %>"><a href="<%= userofreces_path %>">Te Ofrece</a></li>
+              <li class="nav-item <%= 'active' if current_page?(userreservacions_path) %>"><a href="<%= userreservacions_path %>">Reservaciones</a></li>
+
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div class="panel panel-default">
+        <div class="panel-body"><h2 align="center">
+          Vestimenta
+        </h2> </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+
+    <% @vestimenta.each do |vestimentum| %>
+<div class="panel panel-default">
+        <div class="panel-body"><h4 align="izquierda">
+        <h2 id="vista" align="center"><%= vestimentum.tema %></h2></p>
+        <p align="center"><%= image_tag(vestimentum.foto, :style =>'width:50%') %></p>
+        <p>
+        <h3 id="vista" >Detalles:</h3></p>
+        <p>
+        <p>
+        <h4><%= vestimentum.dia.strftime("El dia %d del mes %m.") %></h4></p>
+        <p>
+        <h3 id="vista" >Detalles:</h3></p>
+        <p>
+        <h4><%= vestimentum.descripcion %></h4></p>
+        </br>
+         </h4></div>
+      </div>
+
+    <% end %>
+
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+</div>

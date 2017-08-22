@@ -1,0 +1,25 @@
+// Place all the styles related to the eventos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+td{
+  color: black;
+}
+th {
+color: black;
+}
+
+#new {
+  text-align: left;
+  font-weight: bold;
+  background-color: #fff;
+  text-emphasis-color:  #fff;
+
+}
+
+#table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: black;
+  text-emphasis-color:  black;
+}

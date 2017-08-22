@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<div class="panel-group">
+  <div class="row">
+  <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+    <div class="panel panel-default">
+    <div class="panel-body">
+<p>
+  
+  <h2 id="vista" align="center"><%= @vestimentum.tema %></h2>
+</p>
+
+<p align="center">
+  <%= image_tag(@vestimentum.foto, :style =>'width:50%') %>
+</p>
+
+<p>
+  <h3 id="vista" >Detalles:</h3></p>
+  <p>
+  <h4><%= @vestimentum.descripcion %></h4>
+</p>
+</br>
+
+<!--<%= link_to 'Editar', edit_vestimentum_path(@vestimentum) %>--> |
+<%= link_to '<-- Volver', vestimenta_path %>
+</h4> </div>
+</div>
+    </div>
+<div class="col-sm-3"></div>
+  </div>
+</div>
+</div>

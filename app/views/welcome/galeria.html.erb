@@ -1,0 +1,20 @@
+
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">Galeria</h1>
+
+<div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+
+
+
+    <% @galeria.each do |galerium| %>
+    <div class="grid-item" style="width:25%">
+      <div class="thumbnail">
+        <%= galerium.titulo %> --
+        <%= galerium.descripcion %>
+        <%= image_tag(galerium.image, :class => 'img-responsive') %>
+   </div>
+   </div>
+    <% end %>
+</div>
+<br>

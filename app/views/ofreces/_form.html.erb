@@ -1,0 +1,47 @@
+<%= form_with(model: ofrece, local: true) do |form| %>
+  <% if ofrece.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ofrece.errors.count, "error") %> prohibited this ofrece from being saved:</h2>
+
+      <ul>
+      <% ofrece.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dia %>
+    <%= form.date_select :dia, id: :ofrece_dia, :class => 'form-control'  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :ofrece_nombre, :class => 'form-control'  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo %>
+    <%= form.text_field :tipo, id: :ofrece_tipo, :class => 'form-control'  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_area :descripcion, id: :ofrece_descripcion, :class => 'form-control'  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precio %>
+    <%= form.text_field :precio, id: :ofrece_precio, :class => 'form-control'  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :calificasion %>
+    <%= form.number_field :calificasion, id: :ofrece_calificasion, :class => 'form-control'  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,81 @@
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="<%= admin_path %>">Inicio</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul class="nav navbar-nav">
+            <li class="nav-item <%= 'active' if current_page?(locations_path) %>"><a href="<%= locations_path %>">Ubicaciones</a></li>
+              <li class="nav-item <%= 'active' if current_page?(galeria_path) %>"><a href="<%= galeria_path %>">Galería</a></li>
+            <li class="nav-item <%= 'active' if current_page?(vestimenta_path) %>"><a href="<%= vestimenta_path %>">Vestimenta</a></li>
+              <li class="nav-item <%= 'active' if current_page?(promociones_path) %>"><a href="<%= promociones_path %>">Promociones</a></li>
+              <li class="nav-item <%= 'active' if current_page?(events_path) %>"><a href="<%= events_path %>">Eventos</a></li>
+              <li class="nav-item <%= 'active' if current_page?(products_path) %>"><a href="<%= products_path %>">Tienda</a></li>
+              <li class="nav-item <%= 'active' if current_page?(orders_path) %>"><a href="<%= orders_path %>">Pedidos</a></li>
+              <li class="nav-item <%= 'active' if current_page?(ofreces_path) %>"><a href="<%= ofreces_path %>">Menú</a></li>
+              <li class="nav-item <%= 'active' if current_page?(reservas_path) %>"><a href="<%= reservas_path %>">Reservaciones</a></li>     
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div class="panel panel-default">
+        <div class="panel-body"><h2 align="center">
+          Promociónes en Mamá Dolores
+        </h2> </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+
+      <% @promociones.each do |promocione| %>
+      <div class="panel panel-default">
+        <div class="panel-body"><h5 align="justify">
+
+          <%= promocione.descripcion %>
+
+        </h5> </div>
+      </div>
+      <% end %>
+
+      <div class="panel panel-default">
+        <div class="panel-body"><h5 align="justify">
+
+          <a class="btn btn-default" href="<%= new_promocione_path %>">Agregar Promoción</a>
+
+        </h5> </div>
+      </div>
+        <div class="panel panel-default">
+        <div class="panel-body"><h5 align="justify">
+
+          <a class="btn btn-default" href="<%= promo_path %>">Mas promociones</a>
+
+        </h5> </div>
+      </div>
+      
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+

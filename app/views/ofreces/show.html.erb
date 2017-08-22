@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="well"><p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dia:</strong>
+  <%= @ofrece.dia %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @ofrece.nombre %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @ofrece.tipo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @ofrece.descripcion %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @ofrece.precio %>
+</p>
+
+<p>
+  <strong>Calificasion:</strong>
+  <%= @ofrece.calificasion %>
+</p>
+
+<%= link_to 'Editar', edit_ofrece_path(@ofrece) %> |
+<%= link_to '<-- Volver', ofreces_path %>
+</div>
+</div>
+</div>
+</div>

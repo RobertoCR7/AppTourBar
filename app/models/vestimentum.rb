@@ -1,0 +1,2 @@
+class Vestimentum < ApplicationRecord
+end

@@ -1,0 +1,37 @@
+<%= form_with(model: galerium, local: true) do |form| %>
+  <% if galerium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(galerium.errors.count, "error") %> prohibited this galerium from being saved:</h2>
+
+      <ul>
+      <% galerium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo, id: :galerium_titulo, :class => 'form-control'  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_area :descripcion, id: :galerium_descripcion, rows: 5, cols: 30, :class => 'form-control'  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :galerium_image, :class => 'form-control'  %>
+    <% if form.object.image? %>
+      <%= image_tag form.object.image.thumb.url %>
+      <%= form.label :remove_image %>
+      <%= form.check_box :remove_image %> 
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="well">
+<p id="notice"><%= notice %></p>
+
+<h1>Galeria</h1>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @galerium.titulo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @galerium.descripcion %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= image_tag(@galerium.image, :style =>'width:200px') %>
+</p>
+
+<%= link_to 'Editar', edit_galerium_path(@galerium) %> |
+<%= link_to 'Volver', galeria_path %>
+</div>
+</div>
+</div>
+</div>

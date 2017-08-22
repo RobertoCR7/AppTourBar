@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+<div class="panel-group">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="<%= informacion_path %>">Info</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul class="nav navbar-nav">
+            <li class="nav-item <%= 'active' if current_page?(uservestimenta_path) %>"><a href="<%= uservestimenta_path %>">Vestimenta</a></li>
+              <li class="nav-item <%= 'active' if current_page?(userpromociones_path) %>"><a href="<%= userpromociones_path %>">Promociones</a></li>
+              <li class="nav-item <%= 'active' if current_page?(usereventos_path) %>"><a href="<%= usereventos_path %>">Eventos</a></li>
+              <li class="nav-item <%= 'active' if current_page?(compras_path) %>"><a href="<%= compras_path %>">Compras</a></li>
+              <li class="nav-item <%= 'active' if current_page?(userofreces_path) %>"><a href="<%= userofreces_path %>">Te Ofrece</a></li>
+              <li class="nav-item <%= 'active' if current_page?(userreservacions_path) %>"><a href="<%= userreservacions_path %>">Reservaciones</a></li>
+
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+  </div>
+ 
+<h1>Productos</h1>
+  <div id="columns">
+      <div id="side">
+        <div id="cart">
+          <%= render_if @cart && @cart.line_items.any?, @cart %>
+        </div>
+      </div>
+      <div id="main">
+        <% cache @products do %>
+  <% @products.each do |product| %>
+    <% cache product do %>
+      <div class="entry">
+        <%= image_tag(product.image_url, :style => 'width:200px') %>
+        <h3 id="h3"><%= product.title %></h3>
+        <h5 id="h5"><%= sanitize(product.description) %></h5>
+        <div class="price_line" id="line">
+          <span class="price"><%= number_to_currency(product.price) %></span>
+          <%= button_to 'Agregar al carrito', line_items_path(product_id: product),
+            remote: true %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+      </div>
+    </div>

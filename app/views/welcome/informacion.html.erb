@@ -1,0 +1,291 @@
+
+<div class="panel-group">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="<%= informacion_path %>">Info</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul class="nav navbar-nav">
+            <li class="nav-item <%= 'active' if current_page?(uservestimenta_path) %>"><a href="<%= uservestimenta_path %>">Vestimenta</a></li>
+              <li class="nav-item <%= 'active' if current_page?(userpromociones_path) %>"><a href="<%= userpromociones_path %>">Promociones</a></li>
+              <li class="nav-item <%= 'active' if current_page?(usereventos_path) %>"><a href="<%= usereventos_path %>">Eventos</a></li>
+              <li class="nav-item <%= 'active' if current_page?(compras_path) %>"><a href="<%= compras_path %>">Compras</a></li>
+              <li class="nav-item <%= 'active' if current_page?(userofreces_path) %>"><a href="<%= userofreces_path %>">Te Ofrece</a></li>
+              <li class="nav-item <%= 'active' if current_page?(userreservacions_path) %>"><a href="<%= userreservacions_path %>">Reservaciones</a></li>
+
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div class="panel panel-default">
+        <div class="panel-body"><h2 align="center">
+          Ubicación
+        </h2> </div>
+      </div>
+      <div class="panel panel-default">
+      <div style='width: 960px;'>
+        <div id="map" style='width: 960px; height: 400px;'></div>
+    <script>
+
+      function initMap() {
+        // Styles a map in night mode.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 21.157119, lng: -100.929271},
+          zoom: 16,
+          styles: [
+                {
+                    "featureType": "administrative.locality",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "hue": "#2c2e33"
+                        },
+                        {
+                            "saturation": 7
+                        },
+                        {
+                            "lightness": 19
+                        },
+                        {
+                            "visibility": "on"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "hue": "#ffffff"
+                        },
+                        {
+                            "saturation": -100
+                        },
+                        {
+                            "lightness": 100
+                        },
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "hue": "#ffffff"
+                        },
+                        {
+                            "saturation": -100
+                        },
+                        {
+                            "lightness": 100
+                        },
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "hue": "#bbc0c4"
+                        },
+                        {
+                            "saturation": -93
+                        },
+                        {
+                            "lightness": 31
+                        },
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "hue": "#bbc0c4"
+                        },
+                        {
+                            "saturation": -93
+                        },
+                        {
+                            "lightness": 31
+                        },
+                        {
+                            "visibility": "on"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.arterial",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "hue": "#bbc0c4"
+                        },
+                        {
+                            "saturation": -93
+                        },
+                        {
+                            "lightness": -2
+                        },
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.local",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "hue": "#e9ebed"
+                        },
+                        {
+                            "saturation": -90
+                        },
+                        {
+                            "lightness": -8
+                        },
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "hue": "#e9ebed"
+                        },
+                        {
+                            "saturation": 10
+                        },
+                        {
+                            "lightness": 69
+                        },
+                        {
+                            "visibility": "on"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "hue": "#e9ebed"
+                        },
+                        {
+                            "saturation": -78
+                        },
+                        {
+                            "lightness": 67
+                        },
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                }
+            ]
+        });
+        var image= 'https://cdn2.iconfinder.com/data/icons/location-map-simplicity/512/pub_beer-128.png';
+        var marker = new google.maps.Marker({
+          position: {lat: 21.157704, lng: -100.9350702},
+          map: map,
+          icon: image,
+          title: 'Mama Dolores',
+          animation: google.maps.Animation.DROP,
+        });
+        var marker = new google.maps.Marker({
+          position: {lat: 21.1603551, lng: -100.9292773},
+          map: map,
+          icon: image,
+          title: 'Mama Dolores',
+          animation: google.maps.Animation.DROP,
+        });
+        marker.addListener('click', toggleBounce);
+
+        var infoWindow = new google.maps.InfoWindow({map: map});
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Aqui estas.');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+      function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        } 
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnGaZVXpoyzc4zwnSHooPTr9AgPbGWKbc&callback=initMap"
+    async defer></script>
+      </div>
+    </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div class="panel panel-default">
+        <div class="panel-body"><h4 align="center">
+          Toda la información online de Mamá Dolores, un establecimiento de bar situado en Dolores Hidalgo Cuna <br> de la Independencia Nal. (Municipio: Dolores Hidalgo Cuna de la Independencia Nal., Estado: Guanajuato).
+        </h4> </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+</div>

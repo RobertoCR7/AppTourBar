@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>TourBar</title>
+    
+    <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+ <!-- only if you need custom infoboxes -->
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    '/assets/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag '/assets/application', 'data-turbolinks-track': 'reload' %>
+    
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  </head>
+
+  <body>
+  <%= render 'shared/navbar' %>
+   <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>

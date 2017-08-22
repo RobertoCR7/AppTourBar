@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <div class="panel panel-default">
+      <div class="panel-body">
+<div class="panel-body"><h1 align="center" style="color: #fff;">
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mesa:</strong>
+
+  <%= image_tag(@reserva.mesa, :style => 'width:300px') %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @reserva.nombre %>
+</p>
+
+<p>
+  <strong>Reserva:</strong>
+  <%= @reserva.reserva %>
+</p>
+
+<%= link_to 'Editar', edit_reserva_path(@reserva) %> |
+<%= link_to 'Volver', userreservacions_path %>

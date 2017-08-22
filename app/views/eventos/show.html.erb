@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <div class="panel panel-default">
+      <div class="panel-body">
+<div class="panel-body"><h1 align="center" style="color: #fff;">
+
+Vista Evento
+
+</h1></div>
+</div>
+</div>
+
+<p id="notice" align="center"><%= notice %></p>
+
+<p><center>
+  <strong>Dia:</strong>
+  <%= @evento.dia %>
+</p></center>
+
+<p align="center">
+  <%= image_tag(@evento.foto, :style => 'width:300px') %>
+
+</p>
+
+<p><center>
+  <strong>Descripcion:</strong>
+  <%= @evento.descripcion %>
+</p></center>
+
+<%= link_to 'Editar', edit_evento_path(@evento) %> |
+<%= link_to 'volver', eventos_path %>
+
+
+
+
+
+
+
